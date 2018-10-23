@@ -1,0 +1,115 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Lecture 4 Home Work </title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+        <style type="text/css">
+            body {
+                font-family: 'Roboto', sans-serif;
+            }
+
+            .section-title {
+                margin-bottom: 80px;
+            }
+            .section-title h1 {
+                color: #303030;
+                font-size: 30px;
+                margin-bottom: 5px;
+                font-weight: 800;
+            }
+
+
+            .about-desc h1 {
+                font-size: 34px;
+                font-weight: 700;
+            }
+
+            .about-desc h2 {
+                color: #303030;
+                font-weight: 300;
+                margin-bottom: 20px;
+                font-size: 23px;
+            }
+
+            .about-desc p {
+                line-height: 28px;
+                font-size: 14px;
+            }
+
+            .man-details {
+                margin-top: 30px;
+            }
+        </style>
+        <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+        <!-- Don't use this in production: -->
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    </head>
+    <body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+        class AboutMe extends React.Component {
+            render() {
+                var props = this.props;
+                return (
+                    <div>
+                        <section id="about">
+                            <div className="container">
+                                <div className="row">
+                                    <div className="col-md-12">
+                                        <div className="section-title text-center">
+                                            <h1>About Us</h1>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <div className="col-md-5">
+                                        <div className="img-responsive">
+                                            <img src="img/MDMinhajulIslam.jpg" alt="" className="img-fluid img-responsive"/>
+                                        </div>
+                                    </div>
+                                    <div className="col-md-6 col-md-offset-1">
+                                        <div className="about-desc">
+                                            <h1>Hi, I Am {props.name}</h1>
+                                            <h2>{props.designation}</h2>
+                                            <p>{props.aboutMy}</p>
+
+                                        </div>
+                                        <div className="man-details">
+                                            <div className="row">
+                                                <div className="col-md-6">
+                                                    <p><b>Education:</b> {props.Education}</p>
+                                                    <p><b>Address:</b> {props.Address}</p>
+                                                    <p><b>Nationality:</b> {props.Nationality}</p>
+                                                </div>
+                                                <div className="col-md-6">
+                                                    <p><b>Phone:</b> {props.Phone}</p>
+                                                    <p><b>Email:</b> {props.Email}</p>
+                                                    <p><b>Website:</b> {props.Website}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                );
+            }
+        }
+        ReactDOM.render(
+            <div>
+
+                <AboutMe img="img/MDMinhajulIslam.jpg" name="Md.Minhajul Islam" designation="Developer" aboutMy="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" Education="Bsc in CSE" Address="4100A, Chittagong,BD" Nationality="Bangladeshi" Phone="76 966 260" Email="amar@domainname.com" Website="www.domainname.com"/>
+            </div> ,
+            document.getElementById('root')
+        );
+
+    </script>
+    </body>
+</html>
